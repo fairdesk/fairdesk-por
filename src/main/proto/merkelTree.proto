@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package merkle;
+
+option java_multiple_files = true;
+option java_package = "com.fairdesk.merkletree";
+option java_outer_classname = "PorMerkleTree";
+
+message MerkleNode {
+  string hash = 1;
+  string uid = 2;
+  string nonce = 3;
+  map<string, string> balance = 4;
+}
+
+message MerkleTree {
+  string version = 1;
+  string rootHash = 2;
+  int64 timestamp = 3;
+  repeated string currency = 4;
+  repeated MerkleNode nodes = 5;
+}
